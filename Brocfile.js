@@ -29,7 +29,6 @@ var app = new EmberApp({
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-app.import('vendor/ember-localstorage-adapter/localstorage_adapter.js');
 app.import({
   development: 'vendor/ember-data/ember-data.js',
   production:  'vendor/ember-data/ember-data.prod.js'
@@ -38,6 +37,8 @@ app.import({
     'default'
   ]
 });
+
+app.import('vendor/ember-localstorage-adapter/localstorage_adapter.js');
 
 app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   'ic-ajax': [
