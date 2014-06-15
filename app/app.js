@@ -1,13 +1,14 @@
 import Ember from 'ember';
-import 'ember-data';
-import 'localstorage-adapter';
 import Resolver from 'ember/resolver';
+import loadInitializers from 'ember/load-initializers';
+
+Ember.MODEL_FACTORY_INJECTIONS = true;
 
 var App = Ember.Application.extend({
   modulePrefix: 'ember-seed', // TODO: loaded via config
-  adapter: DS.LSAdapter.extend({ namespace: 'ember-seed' }),
-  serializer: DS.LSSerializer.extend(),
   Resolver: Resolver
 });
+
+loadInitializers(App, 'ember-seed');
 
 export default App;
